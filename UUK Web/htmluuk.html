@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Todoly - My To Do List</title>
+
+    <!-- Google Font: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="cssuuk.css">
+</head>
+
+<body>
+
+    <main class="main-content">
+
+        <section class="greeting">
+
+            <p class="greeting-title">Hi there,</p>
+
+            <h1 id="user-name">Student</h1>
+
+            <p class="greeting-subtitle">
+                Let's complete your tasks today!
+            </p>
+
+            <br>
+
+            <button id="logout-btn" class="logout-button">Logout</button>
+
+        </section>
+
+        <section class="progress-section">
+
+            <div class="progress-header">
+
+                <div>
+                    <h2>Your Progress</h2>
+                    <p>Keep going, you're doing great!</p>
+                </div>
+
+                <div class="progress-percentage">
+                    <span id="progress-percent">0%</span>
+                    <small>Completed</small>
+                </div>
+
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <div class="progress-info">
+                <span id="completed-count">0 tasks completed</span>
+                <span id="total-count">0 total tasks</span>
+            </div>
+
+        </section>
+
+        <section class="todo-container">
+
+            <div class="add-task-section">
+
+                <h2>My Tasks</h2>
+
+                <p>Make today productive!</p>
+
+                <div class="task-input-container">
+
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="What do you need to do?"
+                    >
+
+                    <button id="add-task-btn">
+                        + Add Task
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="task-list-section">
+
+                <div class="task-list-header">
+                    <h2>Today's Tasks</h2>
+                </div>
+
+                <ul id="task-list">
+
+                    <!-- tugas tampil disini -->
+
+                </ul>
+
+                <p id="empty-message">
+                    No tasks yet. Add your first task!
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+<script src="tsuuk.js"></script>
+
+</body>
+
+</html>

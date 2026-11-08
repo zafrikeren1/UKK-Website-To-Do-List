@@ -1,0 +1,529 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+
+    background-image: url("Background Todoly.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: #35445c;
+}
+
+.main-content {
+    margin-left: 17%;
+    padding: 45px 55px;
+
+    max-width: 1250px;
+}
+
+.greeting {
+    margin-bottom: 35px;
+}
+
+.greeting-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #526780;
+
+    margin-bottom: 3px;
+}
+
+.greeting h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #344d70;
+
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.greeting-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #687b95;
+}
+
+.progress-section {
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+
+    padding: 25px;
+    margin-bottom: 30px;
+
+    backdrop-filter: blur(12px);
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.progress-header h2 {
+    font-size: 19px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.progress-header p {
+    font-size: 12px;
+    color: #75869b;
+}
+
+.progress-percentage {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.progress-percentage span {
+    font-size: 25px;
+    font-weight: 700;
+    color: #648dbb;
+}
+
+.progress-percentage small {
+    font-size: 11px;
+    color: #75869b;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5edf8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #a9c9f5;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 12px;
+
+    font-size: 11px;
+    color: #75869b;
+}
+
+
+.todo-container {
+    background: rgba(255, 255, 255, 0.55);
+
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+
+    padding: 25px;
+
+    backdrop-filter: blur(12px);
+}
+
+.add-task-section {
+    margin-bottom: 30px;
+}
+
+.add-task-section h2,
+.task-list-header h2 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #354b68;
+
+    margin-bottom: 6px;
+}
+
+.add-task-section p {
+    font-size: 12px;
+    color: #75869b;
+
+    margin-bottom: 18px;
+}
+
+.task-input-container {
+    display: flex;
+    gap: 12px;
+}
+
+.task-input-container input {
+    flex: 1;
+
+    padding: 13px 16px;
+
+    border: 1px solid #dce6f0;
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.8);
+
+    outline: none;
+
+    font-size: 12px;
+    color: #354b68;
+}
+
+.task-input-container input:focus {
+    border-color: #8bb2dc;
+}
+
+.task-input-container button {
+    padding: 13px 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #82a9d2;
+    color: white;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.task-input-container button:hover {
+    background: #648dbb;
+}
+
+.task-list-section {
+    margin-top: 25px;
+}
+
+.task-list-header {
+    margin-bottom: 15px;
+}
+
+#task-list {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#empty-message {
+    font-size: 12px;
+    color: #8998aa;
+    text-align: center;
+
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+
+    .main-content {
+        margin-left: 0;
+        padding: 30px 20px;
+    }
+
+    .greeting h1 {
+        font-size: 34px;
+    }
+
+    .task-input-container {
+        flex-direction: column;
+    }
+
+    .task-input-container button {
+        width: 100%;
+    }
+
+}
+
+#task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 20px;
+    min-height: 65px;
+
+    background: rgba(255, 255, 255, 0.38);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 16px;
+
+    box-shadow: 0 4px 12px rgba(120, 160, 210, 0.08);
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+
+    width: 25px;
+    height: 25px;
+    min-width: 25px;
+
+    border: 1.5px solid #b9c6d5;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+}
+
+.task-checkbox:checked {
+    background: #a9c9f5;
+    border-color: #a9c9f5;
+}
+
+.task-checkbox:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+}
+
+/* Nama task */
+.task-name {
+    flex: 1;
+    font-size: 15px;
+    color: #3f4650;
+    transition: 0.2s;
+}
+
+/* Nama task yang selesai */
+.task-name.completed {
+    text-decoration: line-through;
+    color: #858b94;
+}
+
+/* Tombol hapus */
+.delete-btn {
+    border: none;
+    background: transparent;
+    color: #aeb9c7;
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    color: #e58d9b;
+    transform: scale(1.1);
+}
+
+
+/* ============================= */
+/* LOGIN PAGE - GLASSMORPHISM */
+/* ============================= */
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+
+    background:
+        radial-gradient(circle at 15% 20%, #d9eaff 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #b9d5f5 0%, transparent 35%),
+        linear-gradient(135deg, #eaf3ff, #c9ddf5, #e3edfa);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+/* Login container */
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Glass card */
+
+.login-card {
+    padding: 45px 40px;
+
+    background: rgba(255, 255, 255, 0.38);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 28px;
+
+    box-shadow: 0 15px 45px rgba(80, 120, 170, 0.15);
+
+    text-align: center;
+}
+
+/* Login icon */
+
+.login-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+
+    color: #719bd0;
+    font-size: 32px;
+}
+
+/* Heading */
+
+.login-card h1 {
+    font-size: 27px;
+    font-weight: 700;
+    color: #344d70;
+    margin-bottom: 12px;
+}
+
+.login-subtitle {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #71839b;
+    margin-bottom: 32px;
+}
+
+/* Form */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.login-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.login-input-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #526780;
+}
+
+.login-input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #344d70;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.login-input-group input:focus {
+    border-color: #91b7e8;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 3px rgba(145, 183, 232, 0.15);
+}
+
+.login-input-group input::placeholder {
+    color: #a5b2c3;
+}
+
+/* Login button */
+
+.login-button {
+    margin-top: 8px;
+    padding: 15px;
+
+    border: none;
+    border-radius: 13px;
+
+    background: linear-gradient(135deg, #91b7e8, #729bd1);
+
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(100, 145, 200, 0.25);
+}
+
+/* Footer */
+
+.login-footer {
+    margin-top: 28px;
+    font-size: 11px;
+    color: #8495aa;
+}
+
+/* Logout button */
+
+.logout-button {
+    padding: 9px 16px;
+    border: 1px solid #dce7f3;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.65);
+    color: #617995;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    background: #eaf2fc;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 35px 25px;
+    }
+
+    .login-card h1 {
+        font-size: 23px;
+    }
+}
